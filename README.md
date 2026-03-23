@@ -20,6 +20,13 @@ Simple utility to export x-ui users from SQLite backups into CSV and Excel files
 - Python 3.10+
 - Optional for Excel export: `openpyxl`
 
+Install dependencies:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 ### Quick start
 ```bash
 python3 export_xui_users_to_excel.py
@@ -63,6 +70,13 @@ python3 export_xui_users_to_excel.py --sort-by used --asc
 ### پیش‌نیازها
 - Python 3.10 یا بالاتر
 - برای خروجی Excel (اختیاری): `openpyxl`
+
+نصب وابستگی‌ها:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
 ### اجرای سریع
 ```bash
