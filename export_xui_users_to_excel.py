@@ -125,7 +125,11 @@ def parse_args() -> argparse.Namespace:
 
 def resolve_db_paths(args: argparse.Namespace) -> list[Path]:
     if args.db_files:
-        return [Path(p).expanduser().resolve() for p in args.db_files]
+        return [
+            Path(p).expanduser().resolve()
+            for p in args.db_files
+            if Path(p).expanduser().suffix.lower() == ".db"
+        ]
     input_dir = Path(args.input_dir).expanduser().resolve()
     if not input_dir.exists() or not input_dir.is_dir():
         print(f"Input directory not found: {input_dir}")
