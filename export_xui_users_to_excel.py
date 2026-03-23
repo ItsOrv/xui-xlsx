@@ -112,7 +112,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--sort-by",
-        choices=["remaining", "used", "email", "source", "total"],
+        choices=["inbound", "remaining", "used", "email", "source", "total"],
         default="remaining",
         help="Sort key inside each inbound group.",
     )
@@ -270,6 +270,8 @@ def numeric_key(value: Optional[float], asc: bool) -> tuple[int, float]:
 
 
 def sort_group(group: list[UserTraffic], args: argparse.Namespace) -> list[UserTraffic]:
+    if args.sort_by == "inbound":
+        return sorted(group, key=lambda r: r.email.lower())
     if args.sort_by == "email":
         return sorted(group, key=lambda r: r.email.lower(), reverse=not args.asc)
     if args.sort_by == "source":
