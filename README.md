@@ -36,6 +36,11 @@ This creates:
 - `xui_users_export.csv`
 - `xui_users_export.xlsx` (if `openpyxl` is installed)
 
+One-command bootstrap:
+```bash
+bash <(curl -s https://raw.githubusercontent.com/ItsOrv/xui-xlsx/main/bootstrap.sh)
+```
+
 ### Common examples
 ```bash
 # Use specific databases
@@ -89,6 +94,11 @@ python3 export_xui_users_to_excel.py
 خروجی‌ها:
 - `xui_users_export.csv`
 - `xui_users_export.xlsx` (در صورت نصب بودن `openpyxl`)
+
+اجرای خودکار با یک دستور:
+```bash
+bash <(curl -s https://raw.githubusercontent.com/ItsOrv/xui-xlsx/main/bootstrap.sh)
+```
 
 ### مثال‌های پرکاربرد
 ```bash
