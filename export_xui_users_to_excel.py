@@ -48,7 +48,8 @@ class UserTraffic:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Export x-ui users from one or more SQLite backups."
+        description="Export x-ui users from one or more SQLite backups.",
+        epilog="Example: python3 export_xui_users_to_excel.py --db x-ui.db --sort-by used",
     )
     parser.add_argument(
         "--db",
