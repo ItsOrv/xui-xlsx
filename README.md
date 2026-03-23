@@ -49,6 +49,9 @@ python3 export_xui_users_to_excel.py --only-unlimited
 
 # Sort inside each inbound group
 python3 export_xui_users_to_excel.py --sort-by used --asc
+
+# Keep inbound grouping and sort users by email
+python3 export_xui_users_to_excel.py --sort-by inbound
 ```
 
 ---
@@ -100,4 +103,7 @@ python3 export_xui_users_to_excel.py --only-unlimited
 
 # مرتب‌سازی داخل هر گروه اینباند
 python3 export_xui_users_to_excel.py --sort-by used --asc
+
+# حفظ گروه‌بندی اینباند و مرتب‌سازی بر اساس ایمیل
+python3 export_xui_users_to_excel.py --sort-by inbound
 ```
