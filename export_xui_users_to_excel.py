@@ -154,14 +154,12 @@ def get_inbound_labels(conn: sqlite3.Connection) -> dict[int, str]:
     cur = conn.execute("SELECT id, remark, tag, protocol FROM inbounds")
     labels: dict[int, str] = {}
     for inbound_id, remark, tag, protocol in cur.fetchall():
-        parts = []
-        if remark:
-            parts.append(str(remark).strip())
-        if tag:
-            parts.append(str(tag).strip())
-        if protocol:
-            parts.append(str(protocol).strip())
-        info = " | ".join([p for p in parts if p])
+        parts = [
+            str(part).strip()
+            for part in (remark, tag, protocol)
+            if part and str(part).strip() and str(part).strip() != "-"
+        ]
+        info = " | ".join(parts)
         labels[inbound_id] = f"{inbound_id} - {info}" if info else str(inbound_id)
     return labels
 
